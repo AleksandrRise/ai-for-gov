@@ -10,8 +10,8 @@ export default function Sidebar() {
         <Image
           src={Logo}
           alt="AI for Gov Logo"
-          width={36}
-          height={36}
+          width={45}
+          height={45}
           className="rounded-md"
           priority
         />
