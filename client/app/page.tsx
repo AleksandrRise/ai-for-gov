@@ -8,10 +8,13 @@ import  FooterTime  from '../components/footer-time';
 export default function Page() {
   return (
     <AppShell>
-      <main className="pb-28">
-        <Hero />
-        <PromptBar />
-        <SuggestionChips />
+      <main className="flex flex-col justify-center items-center min-h-screen text-slate-900">
+        <div className="flex flex-col items-center text-center space-y-8">
+          <Hero />
+          <PromptBar />
+          <SuggestionChips />
+        </div>
+
         <CTAArrow />
         <FooterTime />
       </main>
