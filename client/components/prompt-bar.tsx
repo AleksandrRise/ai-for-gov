@@ -1,6 +1,6 @@
 export default function PromptBar() {
   return (
-    <div className="mx-auto mt-10 max-w-4xl">
+    <div className="mx-auto mt-10 max-w-4xl bg-[#BDD8FF] rounded-4xl">
       <div className="flex items-center gap-3 bg-cloud rounded-pill px-5 py-4 shadow-soft">
         <button aria-label="Attach">Attach</button>
         <input
