@@ -2,7 +2,6 @@ import  AppShell  from '../components/app-shell';
 import  Hero from '../components/hero';
 import  PromptBar  from '../components/prompt-bar';
 import  SuggestionChips  from '../components/suggestion-chips';
-import  CTAArrow  from '../components/cta-arrow';
 import  FooterTime  from '../components/footer-time';
 
 export default function Page() {
@@ -15,7 +14,6 @@ export default function Page() {
           <SuggestionChips />
         </div>
 
-        <CTAArrow />
         <FooterTime />
       </main>
     </AppShell>
