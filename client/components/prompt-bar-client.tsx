@@ -26,7 +26,6 @@ export default function PromptBarClient() {
     });
 
     if (!res.ok) {
-      // Try to read JSON error message
       let serverMsg = "";
       try {
         const errJson = await res.json();
