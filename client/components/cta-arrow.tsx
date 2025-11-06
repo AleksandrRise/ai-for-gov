@@ -1,5 +1,5 @@
 import Image from "next/image";
-import arrow_icon from "@/public/img/arrow-icon.png"
+// Use public path for images under `public/` instead of importing from the public folder.
 
 export default function CTAArrow() {
   return (
@@ -8,7 +8,7 @@ export default function CTAArrow() {
       aria-label="Get started"
     >
       <Image
-        src={arrow_icon}
+        src="/img/arrow-icon.png"
         alt="Arrow"
         width={20}
         height={20}

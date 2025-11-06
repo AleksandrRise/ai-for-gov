@@ -1,6 +1,6 @@
 import  AppShell  from '../components/app-shell';
 import  Hero from '../components/hero';
-import  PromptBar  from '../components/prompt-bar';
+import  PromptBar  from '../components/prompt-bar-client';
 import  SuggestionChips  from '../components/suggestion-chips';
 import  FooterTime  from '../components/footer-time';
 

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import CTAArrow from "../components/cta-arrow";
-import Logo from "@/public/img/ai-logo.png";
+// Use public path for images under `public/` instead of static imports.
 
 export default function Sidebar() {
   return (
@@ -8,7 +8,7 @@ export default function Sidebar() {
       {/* Top logo */}
       <div className="flex flex-col items-center gap-4">
         <Image
-          src={Logo}
+          src="/img/ai-logo.png"
           alt="AI for Gov Logo"
           width={45}
           height={45}
