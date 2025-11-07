@@ -1,6 +1,5 @@
 import Image from "next/image";
 import CTAArrow from "../components/cta-arrow";
-// Use public path for images under `public/` instead of static imports.
 
 export default function Sidebar() {
   return (

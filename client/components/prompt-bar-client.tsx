@@ -4,9 +4,12 @@ import React, { useState } from "react";
 import Image from "next/image";
 
 type Message = { from: "user" | "ai"; text: string };
+type PromptBarClientType = {
+  input: string,
+  setInput: React.Dispatch<React.SetStateAction<string>>
+}
 
-export default function PromptBarClient() {
-  const [input, setInput] = useState<string>("");
+export default function PromptBarClient({input, setInput}: PromptBarClientType) {
   const [messages, setMessages] = useState<Message[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
 

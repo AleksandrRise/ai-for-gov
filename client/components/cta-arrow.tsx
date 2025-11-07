@@ -1,5 +1,4 @@
 import Image from "next/image";
-// Use public path for images under `public/` instead of importing from the public folder.
 
 export default function CTAArrow() {
   return (
