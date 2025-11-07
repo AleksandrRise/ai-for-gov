@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
+import VoiceButton from "./voice-button";
 
 type Message = { from: "user" | "ai"; text: string };
 type PromptBarClientType = {
@@ -99,9 +100,9 @@ export default function PromptBarClient({input, setInput, hasBegun, setHasBegun}
             className="flex-1 w-fit bg-transparent outline-none placeholder:text-slate-500"
           />
 
-          <button aria-label="Voice" className="cursor-pointer">
-            <Image src="/img/voice-icon.png" alt="voice" width={20} height={20} />
-          </button>
+          <VoiceButton
+            setInput={(t) => setInput(t)}
+          />
 
           <button
             onClick={send}
