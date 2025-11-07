@@ -89,7 +89,7 @@ export default function PromptBarClient({input, setInput}: PromptBarClientType) 
             onChange={(e) => setInput(e.target.value)}
             onKeyDown={onKeyDown}
             placeholder="Ask anything…"
-            className="flex-1 bg-transparent outline-none placeholder:text-slate-500"
+            className="flex-1 w-screen bg-transparent outline-none placeholder:text-slate-500"
           />
 
           <button aria-label="Voice" className="cursor-pointer">
