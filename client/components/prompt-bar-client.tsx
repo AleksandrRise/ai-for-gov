@@ -61,6 +61,10 @@ export default function PromptBarClient({input, setInput, hasBegun, setHasBegun}
     }
   };
 
+  const promptClasses = `bg-[#BDD8FF] rounded-4xl px-4 py-3 shadow-sm absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2
+    transform transition-all duration-1000 ease-in-out w-1/2
+  ${hasBegun ? "translate-y-[30vh]" : ""}`
+
   return (
     <div className="mx-auto mt-10 max-w-4xl">
       <div className="space-y-4 mb-4">
@@ -80,7 +84,7 @@ export default function PromptBarClient({input, setInput, hasBegun, setHasBegun}
         ))}
       </div>
 
-      <div className="bg-[#BDD8FF] rounded-4xl px-4 py-3 shadow-sm">
+      <div className={promptClasses}>
         <div className="flex items-center gap-3">
           <label className="cursor-pointer flex items-center">
             <input type="file" aria-label="Attach" className="hidden" />
@@ -92,7 +96,7 @@ export default function PromptBarClient({input, setInput, hasBegun, setHasBegun}
             onChange={(e) => setInput(e.target.value)}
             onKeyDown={onKeyDown}
             placeholder="Ask anything…"
-            className="flex-1 w-screen bg-transparent outline-none placeholder:text-slate-500"
+            className="flex-1 w-fit bg-transparent outline-none placeholder:text-slate-500"
           />
 
           <button aria-label="Voice" className="cursor-pointer">

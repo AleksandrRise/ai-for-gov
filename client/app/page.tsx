@@ -11,9 +11,11 @@ export default function Page() {
   const [hasBegun, setHasBegun] = useState<boolean>(false)
   const [input, setInput] = useState<string>("");
 
+  const mainClasses = `flex flex-col p-5 items-center min-h-screen text-slate-900 justify-center`
+
   return (
     <AppShell>
-      <main className="flex flex-col justify-center items-center min-h-screen text-slate-900">
+      <main className={mainClasses}>
         <div className="flex flex-col items-center text-center space-y-8">
           <Hero hasBegun={hasBegun} />
           <PromptBar input={input} setInput={setInput} hasBegun={hasBegun} setHasBegun={setHasBegun} />
