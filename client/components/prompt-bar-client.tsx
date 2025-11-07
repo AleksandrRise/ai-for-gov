@@ -63,11 +63,11 @@ export default function PromptBarClient({input, setInput, hasBegun, setHasBegun}
 
   const promptClasses = `bg-[#BDD8FF] rounded-4xl px-4 py-3 shadow-sm absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2
     transform transition-all duration-1000 ease-in-out w-1/2
-  ${hasBegun ? "translate-y-[30vh]" : ""}`
+  ${hasBegun ? "translate-y-[40vh]" : ""}`
 
   return (
     <div className="mx-auto mt-10 max-w-4xl">
-      <div className="space-y-4 mb-4">
+      <div className="absolute top-5">
         {messages.map((m: Message, i: number) => (
           <div
             key={i}
