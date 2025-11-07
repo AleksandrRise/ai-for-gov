@@ -7,13 +7,16 @@ type Message = { from: "user" | "ai"; text: string };
 type PromptBarClientType = {
   input: string,
   setInput: React.Dispatch<React.SetStateAction<string>>
+  hasBegun: boolean,
+  setHasBegun: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-export default function PromptBarClient({input, setInput}: PromptBarClientType) {
+export default function PromptBarClient({input, setInput, hasBegun, setHasBegun}: PromptBarClientType) {
   const [messages, setMessages] = useState<Message[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
 
   const send = async () => {
+  setHasBegun(true);
   const prompt = input.trim();
   if (!prompt) return;
 
