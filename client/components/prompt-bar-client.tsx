@@ -67,53 +67,60 @@ export default function PromptBarClient({input, setInput, hasBegun, setHasBegun}
   ${hasBegun ? "translate-y-[40vh]" : ""}`
 
   return (
-    <div className="mx-auto mt-10 max-w-4xl">
-      <div className="absolute top-5">
-        {messages.map((m: Message, i: number) => (
-          <div
-            key={i}
-            className={`flex ${m.from === "user" ? "justify-end" : "justify-start"}`}
-          >
+    <>
+      {/* Messages Container - Fixed position with proper spacing */}
+      <div className="fixed top-8 left-1/2 -translate-x-1/2 w-1/2 overflow-y-auto pointer-events-none" 
+           style={{ maxHeight: 'calc(90vh - 8rem)' }}>
+        <div className="pointer-events-auto space-y-3 px-4 py-4">
+          {messages.map((m: Message, i: number) => (
             <div
-              className={`max-w-[80%] px-4 py-3 rounded-2xl shadow-sm ${
-                m.from === "user" ? "bg-white text-slate-900" : "bg-[#BDD8FF] text-slate-900"
-              }`}
+              key={i}
+              className={`flex ${m.from === "user" ? "justify-end" : "justify-start"}`}
             >
-              {m.text}
+              <div
+                className={`max-w-[80%] px-4 py-3 rounded-2xl shadow-sm ${
+                  m.from === "user" ? "bg-white text-slate-900" : "bg-[#BDD8FF] text-slate-900"
+                }`}
+              >
+                {m.text}
+              </div>
             </div>
-          </div>
-        ))}
-      </div>
-
-      <div className={promptClasses}>
-        <div className="flex items-center gap-3">
-          <label className="cursor-pointer flex items-center">
-            <input type="file" aria-label="Attach" className="hidden" />
-            <Image src="/img/attach.png" alt="attach" width={20} height={20} />
-          </label>
-
-          <input
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-            onKeyDown={onKeyDown}
-            placeholder="Ask anything…"
-            className="flex-1 w-fit bg-transparent outline-none placeholder:text-slate-500"
-          />
-
-          <VoiceButton
-            setInput={(t) => setInput(t)}
-          />
-
-          <button
-            onClick={send}
-            disabled={loading}
-            className="ml-1 cursor-pointer rounded-full bg-[#66A8FF] text-white px-4 py-2 flex items-center gap-2 disabled:opacity-50"
-            aria-label="Send"
-          >
-            {loading ? "Thinking…" : "Send"}
-          </button>
+          ))}
         </div>
       </div>
-    </div>
+
+      {/* Prompt Bar - Keeps original structure */}
+      <div className="mx-auto mt-10 max-w-4xl">
+        <div className={promptClasses}>
+          <div className="flex items-center gap-3">
+            <label className="cursor-pointer flex items-center">
+              <input type="file" aria-label="Attach" className="hidden" />
+              <Image src="/img/attach.png" alt="attach" width={20} height={20} />
+            </label>
+
+            <input
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+              onKeyDown={onKeyDown}
+              placeholder="Ask anything…"
+              className="flex-1 w-fit bg-transparent outline-none placeholder:text-slate-500"
+            />
+
+            <VoiceButton
+              setInput={(t) => setInput(t)}
+            />
+
+            <button
+              onClick={send}
+              disabled={loading}
+              className="ml-1 cursor-pointer rounded-full bg-[#66A8FF] text-white px-4 py-2 flex items-center gap-2 disabled:opacity-50"
+              aria-label="Send"
+            >
+              {loading ? "Thinking…" : "Send"}
+            </button>
+          </div>
+        </div>
+      </div>
+    </>
   );
 }
