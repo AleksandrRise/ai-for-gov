@@ -1,5 +1,4 @@
 import Image from "next/image";
-import CTAArrow from "../components/cta-arrow";
 
 export default function Sidebar() {
   return (
@@ -15,9 +14,6 @@ export default function Sidebar() {
           priority
         />
       </div>
-
-      {/* Bottom floating arrow */}
-      <CTAArrow />
     </aside>
   );
 }
